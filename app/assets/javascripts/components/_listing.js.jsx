@@ -1,13 +1,16 @@
 var Listing = React.createClass({
 	render: function() {
 		var self = this;
+		var price = self.props.price;
+
+		var formatted_price = '$' + price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
 		return (
 	    <div className="col-sm-6 col-md-4">
 	      <div className="thumbnail">
 	        <div className="caption">
 	        	{self.props.image ?
-	        	<div className="thumbnail">
+	        	<div>
 	        		<a className="listing-link" data-remote="true" href={"/listings/"+ self.props.this_id }>
 	        			<img src={self.props.image} />	
 	        		</a>
@@ -15,9 +18,10 @@ var Listing = React.createClass({
 	        	: null }
 	        	<h3>
 	        		<a className="listing-link" data-remote="true" href={"/listings/"+ self.props.this_id }>{ self.props.title }</a>
+	          	<span className="badge pull-right">{ self.props.count } views</span>
 	          </h3>
-	          <p><span className="badge">{ self.props.category.name }</span></p>
-	          <p>{ self.props.price }</p>
+	          <p>Category: <kbd>{ self.props.category.name }</kbd></p>
+	          <p>{ formatted_price }</p>
 	          <p>{ self.props.description }</p>
 	          <p>{ self.props.expiry_date }</p>
 	          { self.props.admin ?

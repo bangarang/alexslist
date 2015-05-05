@@ -15,7 +15,7 @@
 
       <p>
         <strong>Price:</strong>
-        <%= @listing.price %>
+        <%= number_to_currency(@listing.price) %>
       </p>
 
       <p>
@@ -30,7 +30,7 @@
 
       <p>
         <strong>Expiry date:</strong>
-        <%= @listing.expiry_date %>
+        <%= @listing.expiry_date.to_time.strftime('%a, %e %b %Y at %l:%M %p') %>
       </p>
 
       <p>

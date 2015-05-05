@@ -59,11 +59,11 @@ var ListingBox = React.createClass({
 	  	if (self.state.user) {
 	  		is_author = self.state.user.id == object.user.id;
 	  	}
-	  	console.log(is_author);
       return <Listing 
     			this_id={object.id} 
     			image={object.image} 
     			title={object.title} 
+    			count={object.count} 
     			price={object.price} 
     			description={object.description} 
     			expiry_date={object.expiry} 
