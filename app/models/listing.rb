@@ -17,7 +17,7 @@ class Listing < ActiveRecord::Base
   end
 
   def set_expiry
-    self.expiry_date = Time.now + 1.minute
+    self.expiry_date = Time.now + 1.week
   end
 
 end

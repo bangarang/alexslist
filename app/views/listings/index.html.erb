@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Listings</h1>
 
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Title</th>
@@ -18,7 +18,7 @@
     <tbody>
       <% @listings.each do |listing| %>
         <tr>
-          <td><%= link_to listing.title, listing %></td>
+          <td><%= link_to listing.title, listing_path(listing), remote: true, :class => "listing-link" %></td>
           <td><%= listing.description %></td>
           <td><%= listing.price %></td>
           <td><%= listing.status %></td>
@@ -41,4 +41,8 @@
   <% if (user_signed_in?) %>
     <%= link_to 'New Listing', new_listing_path %>
   <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="listing-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
