@@ -8,7 +8,7 @@ var ListingBox = React.createClass({
 
 
   filterAll: function () {
-    this.setState({current_listings: this.state.listings, title: "All Listings"})  
+    this.setState({current_listings: this.state.listings, title: "All Listings", price: null})  
   },
 
   filterCars: function () {
@@ -77,13 +77,13 @@ var ListingBox = React.createClass({
     		<div className="row">
 	    		
 	    		<div className="btn-group pull-right" role="group">
-	    			<button  type="button" className="btn btn-default" onClick={self.filterAll}>All</button>
-	    			<button  type="button" className="btn btn-default" onClick={self.filterCars}>Cars</button>
-	    			<button  type="button" className="btn btn-default" onClick={self.filterHouses}>Houses</button>
-	    			<button  type="button" className="btn btn-default" onClick={self.filterJobs}>Jobs</button>
-	    			<button  type="button" className="btn btn-default" onClick={self.sortListings}>Price 
-	    				{ self.state.price ? <span className="glyphicon glyphicon-triangle-bottom"></span> : null }
-	    				{ self.state.price == false ? <span className="glyphicon glyphicon-triangle-top"></span> : null }
+	    			<button type="button" className="btn btn-default" onClick={self.filterAll}>All</button>
+	    			<button type="button" className="btn btn-default" onClick={self.filterCars}>Cars</button>
+	    			<button type="button" className="btn btn-default" onClick={self.filterHouses}>Houses</button>
+	    			<button type="button" className="btn btn-default" onClick={self.filterJobs}>Jobs</button>
+	    			<button type="button" className="btn btn-default price-button" onClick={self.sortListings}>Price 
+	    				{ self.state.price ? <span className="glyphicon glyphicon-menu-down"></span> : null }
+	    				{ self.state.price == false ? <span className="glyphicon glyphicon-menu-up"></span> : null }
 	    			</button>
 	    		</div>
 	    	</div>
