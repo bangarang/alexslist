@@ -50,3 +50,4 @@ gem "paperclip", "~> 4.2"
 gem 'capybara'
 
 gem 'simple_form'
+gem 'react-rails', '~> 1.0'

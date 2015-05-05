@@ -1,35 +1,7 @@
+
+<%= react_component('ListingBox', render(template: 'listings/index.json.jbuilder')) %>
+
 <div class="container">
-  <div class="row">
-    <h1>Listings</h1>
-  <% @listings.each do |listing| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-      <% if (listing.image_file_name) %>
-        <%= link_to listing, remote: true, :class => "listing-link" do %>
-          <%= image_tag listing.image.url(:medium), class: 'media-object' %>
-        <% end %>
-      <% end %>
-        <div class="caption">
-          <h3><%= link_to listing, remote: true, :class => "listing-link" do %><%= listing.title %> <span class="badge"><%= listing.category.name %></span><% end %></h3>
-          <p><%= listing.description %></p>
-          <p><%= listing.expiry_date.to_time.strftime('%a, %e %b %Y at %l:%M %p') %></p>
-
-          <% if (user_signed_in? && current_user == listing.user) %>
-            <%= link_to edit_listing_path(listing), class: "btn btn-primary btn-block" do %>
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Listing
-            <% end %>
-            <%= link_to listing, method: :delete, class: "btn btn-danger btn-block", data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete Listing
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-  <% end %>
-  </div>
-
-  <br>
   <% if (user_signed_in?) %>
     <%= link_to new_listing_path, class: 'btn btn-primary btn-block' do %>
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Listing

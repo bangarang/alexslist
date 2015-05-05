@@ -53,6 +53,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    connection_pool (2.2.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -108,6 +109,13 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    react-rails (1.0.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.1)
+      react-source (~> 0.13)
+    react-source (0.13.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec-core (3.2.3)
@@ -177,6 +185,7 @@ DEPENDENCIES
   mysql2
   paperclip (~> 4.2)
   rails (= 4.1.8)
+  react-rails (~> 1.0)
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
     end
   end
 
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def index
     @listings = Listing.where "expiry_date > ?", Time.now
