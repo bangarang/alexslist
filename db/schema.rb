@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505033954) do
+ActiveRecord::Schema.define(version: 20150505144742) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150505033954) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "count",              default: 0
   end
 
   add_index "listings", ["category_id"], name: "index_listings_on_category_id", using: :btree

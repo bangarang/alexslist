@@ -19,6 +19,8 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @listing.count += 1
+    @listing.save
     respond_with(@listing)
   end
 
@@ -53,6 +55,6 @@ class ListingsController < ApplicationController
     end
 
     def listing_params
-      params.require(:listing).permit(:title, :description, :price, :status, :expiry_date, :user_id, :category_id, :image)
+      params.require(:listing).permit(:title, :description, :price, :status, :expiry_date, :user_id, :category_id, :image, :count)
     end
 end
