@@ -55,8 +55,10 @@ var ListingBox = React.createClass({
 		var self = this;
 
 	  var listings = self.state.current_listings.map(function(object) {
-
-	  	var is_author = self.state.user.id == object.user.id;
+	  	var is_author = false;
+	  	if (self.state.user) {
+	  		is_author = self.state.user.id == object.user.id;
+	  	}
 	  	console.log(is_author);
       return <Listing 
     			this_id={object.id} 
