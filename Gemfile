@@ -48,3 +48,5 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem "paperclip", "~> 4.2"
 
 gem 'capybara'
+
+gem 'simple_form'
