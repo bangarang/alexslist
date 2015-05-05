@@ -5,6 +5,9 @@
       <h4 class="modal-title" id="myModalLabel"><%= @listing.title %></h4>
     </div>
     <div class="modal-body">
+      <% if (@listing.image_file_name) %>
+        <%= image_tag @listing.image.url %>
+      <% end %>
       <p>
         <strong>Description:</strong>
         <%= @listing.description %>

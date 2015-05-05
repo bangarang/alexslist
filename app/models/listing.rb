@@ -2,9 +2,12 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
+  has_attached_file :image
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
   # enum status: [ :live, :expired ]
 
-  validates :title, :description, :price, :expiry_date, :user, :category, presence: true
+  validates :title, :description, :price, :user, :category, presence: true
 
   before_save :set_expiry
 
